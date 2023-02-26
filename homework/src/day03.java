@@ -50,4 +50,9 @@ public class day03 {
         String currSun = sdf.format(date);
         System.out.println(currSun);
     }
+    @Test
+    public void test3(){
+        System.out.println("123");
+
+    }
 }
