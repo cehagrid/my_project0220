@@ -55,5 +55,6 @@ public class day03 {
         System.out.println("123");
         System.out.println("master-");
         System.out.println("master-test1");
+        System.out.println("push-test");
     }
 }
