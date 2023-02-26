@@ -54,5 +54,6 @@ public class day03 {
     public void test3(){
         System.out.println("123");
         System.out.println("master-");
+        System.out.println("master-test1");
     }
 }
