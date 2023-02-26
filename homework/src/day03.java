@@ -53,6 +53,6 @@ public class day03 {
     @Test
     public void test3(){
         System.out.println("123");
-
+        System.out.println("master-");
     }
 }
