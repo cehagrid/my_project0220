@@ -3,6 +3,9 @@ import org.junit.jupiter.api.Test;
 import java.util.Scanner;
 
 public class AfternoonExer {
+    /*
+    输入多个数字，统计整数和负数，读到0时结束
+     */
     @Test
     public void test() {
         Scanner scan = new Scanner(System.in);
@@ -20,6 +23,9 @@ public class AfternoonExer {
         System.out.println("负数：" + negative);
     }
 
+    /*
+    1-100内输出4的倍数 和 个位数为4的数
+     */
     @Test
     public void test1() {
         int num = 0;
@@ -30,6 +36,9 @@ public class AfternoonExer {
         System.out.println("num = " + num);
     }
 
+    /*
+    10进制转2进制
+     */
     @Test
     public void test2() {
         System.out.println("键盘输入一个正整数：");
@@ -59,6 +68,9 @@ public class AfternoonExer {
         System.out.println("num to binary is: " + bin);
     }
 
+    /*
+    转2进制，使用包装类
+     */
     @Test
     public void test2_1(){
         System.out.println("input number：");
@@ -66,6 +78,8 @@ public class AfternoonExer {
         Integer i = scan.nextInt();
         System.out.println("binary is："+Integer.toString(i,2));
     }
+
+    //输出循环菱形
     /*      raw   space   star  star+space
 ----*       1      4        1       0
    * *      2      3        2       1

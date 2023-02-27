@@ -4,6 +4,7 @@ import java.lang.annotation.Target;
 import java.util.Scanner;
 
 public class MorningExer {
+    //输入分数：给出相应的level
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("请输入分数：");
@@ -38,6 +39,7 @@ public class MorningExer {
 
     }
 
+    //字符串转成数组
     @Test
     public void myTest1(){
         char[] array = "ABCDEFG".toCharArray();
