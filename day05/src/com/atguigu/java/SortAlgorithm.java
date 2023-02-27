@@ -2,7 +2,7 @@ package com.atguigu.java;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
 
 /**
@@ -44,7 +44,6 @@ public class SortAlgorithm {
             if (flag == true) {
                 break;
             }
-
         }
 
         System.out.println(Arrays.toString(arr));
