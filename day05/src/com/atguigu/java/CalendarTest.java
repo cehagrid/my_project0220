@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class CalendarTest {
@@ -19,6 +20,57 @@ public class CalendarTest {
 
         Date parseDate = sdf.parse("2023/2/27 08:55");
         System.out.println("parse解析前："+parseDate);
+    }
+
+    @Test
+    public void CalendarTest(){
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.getClass());
+
+        //测试get(int field)
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH));
+        System.out.println(calendar.get(Calendar.DAY_OF_YEAR));
+
+        System.out.println("set()演示-----------------------");
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));//今天是本月第几天
+
+        //set(int field,xx)
+        calendar.set(Calendar.DAY_OF_MONTH,23);//设置为23天
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+
+        System.out.println("add()演示--------------------------");
+        //add(int field,xx)
+        calendar.add(Calendar.DAY_OF_MONTH,3);//+3天
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+
+        System.out.println("getTime()演示----------------------");
+        //Calendar --> Date
+        Date date = calendar.getTime();
+        System.out.println(date);
+        SimpleDateFormat sdf = new SimpleDateFormat();
+        System.out.println(sdf.format(date));
+        sdf = new SimpleDateFormat("EEE yyyy-MM-dd HH:mm:ss");
+        System.out.println(sdf.format(date));
+
+        System.out.println("setTime()演示----------------------");
+        //相当于重置了
+        Date date1 = new Date();
+        calendar.setTime(date1);
+        //周几要-1，第几个月要+1
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK)-1);
+        System.out.println(calendar.get(Calendar.MONTH)+1);
+
+    }
+
+    /*
+     *练习:如何将一个java.util.Date的实例转换为java.sql.Date的实例
+     */
+    @Test
+    public void DateTransfer(){
+        Date date = new Date();
+        java.sql.Date date1 = new java.sql.Date(date.getTime());
+        System.out.println(date1);
+
     }
 }
 
