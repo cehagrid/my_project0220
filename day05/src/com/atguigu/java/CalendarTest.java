@@ -72,6 +72,22 @@ public class CalendarTest {
         System.out.println(date1);
 
     }
+
+    /*
+     *拓展:
+     * 将控制台获取的年月日（比如: 2022-12-13）的字符串数据，保存在数据库中。
+     * (简化为得到java.sql.Date的对象，此对象对应的时间为2022-12-13).
+     * ★字符串---> java.util.Date ---> java.sql.Date
+     */
+    //解析成date，格式化成字符串
+    @Test
+    public void test1() throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = sdf.parse("2022-12-13");
+        java.sql.Date date1 = new java.sql.Date(date.getTime());
+        System.out.println(date1);
+
+    }
 }
 
 
