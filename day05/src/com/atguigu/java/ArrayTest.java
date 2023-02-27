@@ -35,12 +35,19 @@ public class ArrayTest {
      */
     @Test
     public void test1(){
+        System.out.println("----------方法一：------------");
         char[] letters = new char[26];
         for (int i = 0; i < letters.length; i++) {
             letters[i] = (char)(i+97);
         }
         for (int i = 0; i < letters.length; i++) {
             System.out.println(letters[i]+"->"+(char)(i+65));
+//            i-=32;//此时不用强转char
+        }
+
+        System.out.println("---------方法二：-----------");
+        for (char i = 'a'; i <= 'z'; i++) {
+            System.out.println(i + "->" + (char)(i-32));
         }
     }
 
@@ -65,6 +72,4 @@ public class ArrayTest {
             System.out.print(str+" ");
         }
     }
-    
-
 }
