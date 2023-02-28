@@ -155,7 +155,7 @@ public class CalendarTest {
         System.out.println("-Instant--------------------------");
         Instant instant = Instant.now();
         System.out.println(instant);
-
+//        instant.atOffset();
     }
 
     //DateTimeFormatter
@@ -173,6 +173,24 @@ public class CalendarTest {
         LocalTime localTime2 = LocalTime.of(19, 22, 32);
         Duration between = Duration.between(localTime1, localTime2);
         System.out.println(between);
+
+        LocalDate localDate1 = LocalDate.now();
+        LocalDate localDate2 = LocalDate.of(2021, 12, 4);
+        Period period = Period.between(localDate1, localDate2);
+        System.out.println(period);
+        System.out.println(period.getDays());
+        System.out.println(period.getMonths());
+        System.out.println(period.getYears());
+        System.out.println("----------------------");
+
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime start = LocalDateTime.of(2000, 12, 4, 12, 12, 23);
+        String format = now.format(DateTimeFormatter.ofPattern("EEE yyyy-MM-dd HH:mm:ss"));
+        String format1 = start.format(DateTimeFormatter.ofPattern("EEE yyyy-MM-dd HH:mm:ss"));
+        Duration between1 = Duration.between(now, start);
+        System.out.println(between1.toMillis());
+        System.out.println(between1.toDays());//间隔天数
+        System.out.println(between1);
     }
 }
 
