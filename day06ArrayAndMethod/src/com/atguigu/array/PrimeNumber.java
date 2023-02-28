@@ -1,4 +1,4 @@
-package com.atguigu.java;
+package com.atguigu.array;
 
 import org.junit.jupiter.api.Test;
 

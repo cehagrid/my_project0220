@@ -1,4 +1,4 @@
-package com.atguigu.java;
+package com.atguigu.array;
 
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +8,6 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 
 public class CalendarTest {
     @Test
