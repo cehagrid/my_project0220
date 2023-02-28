@@ -4,8 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class CalendarTest {
     @Test
@@ -86,6 +92,81 @@ public class CalendarTest {
         Date date = sdf.parse("2022-12-13");
         java.sql.Date date1 = new java.sql.Date(date.getTime());
         System.out.println(date1);
+
+    }
+
+    /**
+     * @description: P147-P148
+     * -可变性:像日期和时间这样的类应该是不可变的。
+     * -偏移性: Date中的年份是从1900开始的，而月份都从0开始。
+     * -格式化:格式化只对Date有用，Calendar则不行。
+     * -此外，它们也不是线程安全的;不能处理闰秒等。
+     *
+     * @author: liy
+     * @date: 2023/2/27 19:57
+     * @param:
+     * @return:
+     */
+    @Test
+    public void test2(){
+        String s1 = "hello";
+        String s2 = s1.replace('l','o');//String的不可变性
+        System.out.println(s1);//hello
+
+        //体会Calendar的可变性
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH,23);
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+        System.out.println("---------------");
+        //有偏移量年（1900）月（0）
+        Date date = new Date(2023, 2, 27);
+        System.out.println(date);
+
+
+    }
+
+    /*
+    JDK 8 新增TimeAPI 以后用这个
+    LocalTime、LocalDate、LocalDateTime
+     */
+    @Test
+    public void test3(){
+        //now()获取当前的时间和对应的实例
+        LocalDate localDate = LocalDate.now();
+        System.out.println("localDate: "+localDate);//2023-02-27
+        LocalTime localTime = LocalTime.now();
+        System.out.println("localTime: "+localTime);//20:12:23.159081400
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println("localDateTime: "+localDateTime);//2023-02-27T20:12:23.159081400
+
+        //of():获取指定的日期时间的实例
+        LocalDate localDate1 = LocalDate.of(2021, 5, 23);
+        System.out.println("LocalDate.of(2021, 5, 23): "+localDate1);
+        LocalTime localTime1 = LocalTime.of(19, 59, 30);
+        System.out.println("LocalTime.of(19, 59, 30): "+localTime1);
+        LocalDateTime localDateTime1 = LocalDateTime.of(2022, 12, 21, 13, 13, 13);
+        System.out.println("LocalDateTime.of(2022, 12, 21, 13, 13, 13): "+localDateTime1);
+
+        LocalDateTime localDateTime2 = LocalDateTime.of(0, 1, 1, 0, 0, 0);
+        System.out.println(localDateTime2);
+
+    }
+
+    //Instant
+    @Test
+    public void test4(){
+        System.out.println("-Instant--------------------------");
+        Instant instant = Instant.now();
+        System.out.println(instant);
+
+    }
+
+    //DateTimeFormatter
+    @Test
+    public void test5(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("EEE yyyy-MM-dd HH:mm:ss");
+        String format = dtf.format(LocalDateTime.now());
+        System.out.println(format);
 
     }
 }

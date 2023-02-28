@@ -3,10 +3,9 @@ import org.junit.jupiter.api.Test;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Scanner;
 
-public class day03 {
+public class Day03 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("输入字符：");
