@@ -30,6 +30,7 @@ public class SortAlgorithm {
         //设置停止排序标志
         boolean flag;
         //1.外层循环
+//        l:
         for (int i = 0; i < arr.length - 1; i++) {
             flag = true;
             //2.内层循环每次都少一次
@@ -39,6 +40,7 @@ public class SortAlgorithm {
                     arr[j + 1] = arr[j] ^ arr[j + 1];
                     arr[j] = arr[j] ^ arr[j + 1];
                     flag = false;
+//                    continue l;//优化
                 }
             }
             if (flag == true) {
@@ -60,8 +62,27 @@ public class SortAlgorithm {
      */
     @Test
     public void selectionSort() {
-
+        int[] arr = {56, 3, 23, 12, 79, 44, 50, 1, 33};
+        System.out.println("排序前：" + Arrays.toString(arr));
+        int front;//有序的边界
+        for (front = 0; front < arr.length; front++) {
+            int minIndex = front;//最小值下标
+            //1.for循环选择最小的数,并与第一位交换，第一位的标记
+            for (int i = front + 1; i < arr.length; i++) {
+                if (arr[i] < arr[minIndex]) {
+                    minIndex = i;
+                }
+            }
+            if (minIndex != front) {
+                arr[minIndex] = arr[minIndex] ^ arr[front];
+                arr[front] = arr[minIndex] ^ arr[front];
+                arr[minIndex] = arr[minIndex] ^ arr[front];
+            }
+        }
+        System.out.println("排序后："+Arrays.toString(arr));
     }
+
+
 
     /**
      * @description: insertionSort
