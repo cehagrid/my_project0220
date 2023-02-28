@@ -43,6 +43,7 @@ public class MethodExer {
     public void test1() throws Exception {
         ClassLoader classLoader = MethodExer.class.getClassLoader();
         Class<?> clazz = classLoader.loadClass("com.atguigu.method.MethodExer");
+        //有弊端，不能是私有构造器，不能。。。
         MethodExer methodExer = (MethodExer)clazz.newInstance();
 
         Method isPrime = clazz.getDeclaredMethod("isPrime", int.class);
