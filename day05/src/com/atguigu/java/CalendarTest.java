@@ -4,10 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -168,6 +165,14 @@ public class CalendarTest {
         String format = dtf.format(LocalDateTime.now());
         System.out.println(format);
 
+    }
+    //Duration：时间间隔（s、ns） / Period:时间间隔，年月日
+    @Test
+    public void test6(){
+        LocalTime localTime1 = LocalTime.now();
+        LocalTime localTime2 = LocalTime.of(19, 22, 32);
+        Duration between = Duration.between(localTime1, localTime2);
+        System.out.println(between);
     }
 }
 
