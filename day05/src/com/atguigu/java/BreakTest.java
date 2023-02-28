@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class BreakTest {
     /*
     break跳出两层循环的方法，类似goto
+    continue结束本次循环，执行标签所在循环
      */
     @Test
     public void test(){

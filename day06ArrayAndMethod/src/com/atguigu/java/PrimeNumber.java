@@ -32,6 +32,23 @@ public class PrimeNumber {
             }
         }
     }
+
+    /*
+    优化求质数continue l;
+     */
+    @Test
+    public void test2(){
+        l:
+        for (int i = 0; i <= 100; i++) {
+            for (int j = 0; j <= Math.sqrt(i) ; j++) {
+                if (i % j == 0) {
+                    continue l;//如果不是质数直接执行外层循环
+                }
+            }
+            System.out.println(i);
+        }
+
+    }
 }
 
 
