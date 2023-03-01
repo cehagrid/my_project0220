@@ -22,6 +22,12 @@ public class RectangleTest {
         Rectangle rectangle = new Rectangle();
         System.out.println(rectangle);
     }
+    
+    @Test
+    public void test1() throws ClassNotFoundException {
+        Class<?> clazz = Class.forName("com.atguigu.oop.Rectangle");
+        System.out.println("clazz = " + clazz);
+    }
 
 }
 
