@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Scanner;
 
 public class ReflectionTest {
     @Test
@@ -23,7 +24,15 @@ public class ReflectionTest {
 
             Method isPrime = clazz.getDeclaredMethod("isPrime", int.class);
             isPrime.setAccessible(true);
-            invoke = (boolean) isPrime.invoke(reflectionTest, 3);
+            Scanner scan = new Scanner(System.in);
+            System.out.println("请输入数字（判断是否为质数）:");
+            int num = scan.nextInt();
+            invoke = (boolean) isPrime.invoke(reflectionTest, num);
+            if (invoke == true) {
+                System.out.println(num+"是质数！");
+            }else {
+                System.out.println(num+"不是质数 ");
+            }
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (NoSuchMethodException e) {
