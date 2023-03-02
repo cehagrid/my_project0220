@@ -191,7 +191,22 @@ public class CalendarTest {
         System.out.println(between1.toDays());//间隔天数
         System.out.println(between1);
     }
+
+    @Test
+    public void test7(){
+        LocalDateTime localDate = LocalDateTime.of(1996, 12, 4,0,0,0);
+        System.out.println("生产日期 = " + localDate.toLocalDate());
+        LocalDateTime now = LocalDateTime.now();
+//        LocalDate localDate1 = localDate.plusDays(120);
+//        System.out.println("到期时间 = " + localDate1);
+        System.out.println("现在时间 = " + now.toLocalDate());
+        Duration between = Duration.between(localDate, now);
+        System.out.println("模式：噩梦\n已生存天数：" + between.toDays());
+
+
+    }
 }
+
 
 
 
