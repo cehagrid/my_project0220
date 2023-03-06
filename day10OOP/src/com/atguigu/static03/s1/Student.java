@@ -15,8 +15,8 @@ public class Student {
         this.gender = gender;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
