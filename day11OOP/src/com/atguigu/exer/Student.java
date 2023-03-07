@@ -1,4 +1,4 @@
-package com.atguigu.clone;
+package com.atguigu.exer;
 
 public class Student implements Cloneable,Comparable{
     protected  Object clone() throws CloneNotSupportedException {
@@ -29,8 +29,8 @@ public class Student implements Cloneable,Comparable{
 
             Student student = (Student) o;
             return this.age - student.age;
-
     }
+
 
 }
 
