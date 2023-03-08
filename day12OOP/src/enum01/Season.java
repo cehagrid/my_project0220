@@ -13,6 +13,11 @@ public enum Season {
         this.seasonName = seasonName;
         this.desc = desc;
     }
+
+    public static Season valueof(String spring) {
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Season{" +

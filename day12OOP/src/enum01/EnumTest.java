@@ -1,5 +1,6 @@
 package enum01;
 
+import enum01.exer.Month;
 import org.junit.Test;
 /*
 
@@ -93,10 +94,30 @@ public class EnumTest {
     public void test01(){
         //获取所有的枚举对象
         Season[] values = Season.values();
-
         for (Season value : values) {
-            System.out.println("value = " + value);
+            System.out.println(value);
         }
+
+        Season obj = Season.valueOf("AUTUMN");
+
+        System.out.println(obj);
+        Season obj2 = Season.valueOf("SPRING");
+        System.out.println(obj2);
+        String name = obj.name();
+        System.out.println(name);
+        int ordinal = obj.ordinal();
+        System.out.println(ordinal);
+
+    }
+
+    @Test
+    public void Enum(){
+        Month june = Month.valueOf("JUNE");
+        System.out.println(june);
+        for (Month value : Month.values()) {
+            System.out.println(value);
+        }
+
 
 
     }
