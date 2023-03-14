@@ -17,15 +17,15 @@ import java.util.ListIterator;
  */
 public class ExerTest {
     @Test
-    public void test(){
+    public void test() {
         //随机产生10个20内的偶数,存到一个List<>
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
 
-        int num = (int) (Math.random()*10);
-        num = num * 2;
+            int num = (int) (Math.random() * 10);
+            num = num * 2;
 //            System.out.println(i+":"+num);
-        list.add(num);
+            list.add(num);
         }
 //        （2）然后获取元素的个数
         System.out.println("list.size() = " + list.size());
@@ -35,17 +35,17 @@ public class ExerTest {
 //        （4）使用ListIterator从后往前遍历显示它们
         ListIterator<Integer> listIterator = list.listIterator(list.size());
         while (listIterator.hasPrevious()) {
-            System.out.print(listIterator.previous()+" ");
+            System.out.print(listIterator.previous() + " ");
         }
 
-    //（5）判断是否存在12这个偶数，如果不存在，就输出不存在12。如果存在，输出其第一次出现的下标，并删除12之后的所有元素。
+        //（5）判断是否存在12这个偶数，如果不存在，就输出不存在12。如果存在，输出其第一次出现的下标，并删除12之后的所有元素。
         int index = list.indexOf(12);
         if (index == -1) {
             System.out.println("不存在12");
-        }else{
+        } else {
             System.out.println("index = " + index);
             //从后往前删
-            for (int i = list.size()-1; i > index; i--) {
+            for (int i = list.size() - 1; i > index; i--) {
                 list.remove(i);
             }
 
