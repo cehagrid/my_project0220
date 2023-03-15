@@ -2,10 +2,7 @@ package com.atguigu.map.base;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MapTest2 {
     @Test
@@ -30,6 +27,35 @@ public class MapTest2 {
         map2.put(3,23);
         map2.put(14,23);
         System.out.println("map2 = " + map2);
+//        Comparator<Object> c = new Comparator<>() {
+//            @Override
+//            public int compare(Object o1, Object o2) {
+//                Student s1 = (Student) o1;
+//                Student s2 = (Student) o2;
+//                return s1.getAge()-s2.getAge();
+//            }
+//        };
+
+//        TreeMap map3 = new TreeMap(c);
+
+//        TreeMap map3 = new TreeMap(new Comparator<>() {
+//            @Override
+//            public int compare(Object o1, Object o2) {
+//                Student s1 = (Student) o1;
+//                Student s2 = (Student) o2;
+//                return s1.getAge()-s2.getAge();
+//            }
+//        });
+        TreeMap map3 = new TreeMap(Comparator.comparingInt(Student::getAge));
+        Student s1 = new Student("王朝", 28);
+        Student s2 = new Student("马汉", 38);
+        Student s3 = new Student("张龙", 23);
+        Student s4 = new Student("赵虎", 12);
+        map3.put(s1, "我是王朝");
+        map3.put(s2, "我是马汉");
+        map3.put(s3, "我是不马汉");
+        map3.put(s4, "我是赵虎");
+        System.out.println("map3 = " + map3);
 
     }
 }
