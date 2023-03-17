@@ -17,13 +17,18 @@ public class FileExer {
         //展现列表
         //传入文件
         File[] files = file.listFiles();
-        if(file.listFiles() == null){
-            return;
-        }else{
+//        if(file.listFiles() == null){
+//            return;
+//        }else{
+//
+//            for (File file1 : files) {
+//                extracted(file1);
+//                System.out.println("file1 = " + file1);
+//            }
+//        }
+        for (File file2 : files) {
+            if (file2.isFile()){
 
-            for (File file1 : files) {
-                extracted(file1);
-                System.out.println("file1 = " + file1);
             }
         }
     }
