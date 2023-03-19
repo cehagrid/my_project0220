@@ -65,8 +65,9 @@ public class Solution {
         int rk = -1, ans = 0;
         for (int i = 0; i < n; i++) {
             if (i != 0) {//忽略第一次
-                set.remove(s.charAt(i - 1));//删除重复字符
+                set.remove(s.charAt(i - 1));//删除左端点字符
             }
+            //如果下一个字符和中间的某个字符重复了,就会一直包含导致i一直右移直到去除掉此此字符为止
             while (rk + 1 < n && !set.contains(s.charAt(rk + 1))) {//指针不断右移,在长度范围内,在集合外则加入集合
                 set.add(s.charAt(rk + 1));
                 rk++;
