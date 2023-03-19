@@ -1,5 +1,7 @@
 package com.atguigu.thread.runnable;
 
+import org.junit.Test;
+
 import java.sql.SQLOutput;
 
 //多线程的同步问题,多窗口卖票
