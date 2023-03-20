@@ -11,7 +11,7 @@ public class WaitNotifyTest {
     static Semaphore offer2 = new Semaphore(0);
     //胶水+纸
     static Semaphore offer3 = new Semaphore(0);
-    //互斥访问桌子
+    //生产者仓库余量
     static Semaphore finish = new Semaphore(0);
     //桌子
     static Semaphore desk = new Semaphore(1);
