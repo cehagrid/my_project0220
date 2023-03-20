@@ -15,12 +15,9 @@ public class Test {
         w1.setName("靓仔");
 
 
-
         c1.start();
         w1.start();
 
-
-
-
     }
+
 }
