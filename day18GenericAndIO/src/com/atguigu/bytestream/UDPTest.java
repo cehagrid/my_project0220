@@ -16,8 +16,7 @@ public class UDPTest {
 
         DatagramSocket socket = new DatagramSocket();
 
-//        String str = "我是UDP方式发送的导弹";
-        FileInputStream fis = new FileInputStream("C:\\Users\\Administrator\\Desktop\\2a.jpg");
+        FileInputStream fis = new FileInputStream("C:\\Users\\Administrator\\Desktop\\1.gif");
         int len=0;
         byte[] buff = new byte[20];
         String str = "" ;
@@ -25,8 +24,8 @@ public class UDPTest {
             str+=new String(buff,0,len);
         }
         byte[] data = str.getBytes();
-//        InetAddress inet = InetAddress.getLocalHost();
-        DatagramPacket packet = new DatagramPacket(data, 0, data.length, InetAddress.getByName("192.168.41.56"), 9090);
+        InetAddress inet = InetAddress.getLocalHost();
+        DatagramPacket packet = new DatagramPacket(data, 0, data.length, InetAddress.getByName("192.168.41.123"), 9090);
         socket.send(packet);
         socket.close();
 
