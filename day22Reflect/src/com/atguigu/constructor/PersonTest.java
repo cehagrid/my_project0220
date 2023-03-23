@@ -27,26 +27,38 @@ public class PersonTest {
     public void test02() throws Exception {
         //Constructor
         Class<?> clazz = PersonTest.class.getClassLoader().loadClass("com.atguigu.constructor.Person");
-        Constructor<?> constructor = clazz.getDeclaredConstructor(String.class,double.class,int.class,char.class);
+        Constructor<?> constructor = clazz.getDeclaredConstructor(String.class, double.class, int.class, char.class);
         constructor.setAccessible(true);
         Object instance = constructor.newInstance("东皇太一", 99999.9, 26, '蛇');
         System.out.println("instance = " + instance);
 
         //Method
-        Person p = (Person) instance;
+//        Person p = (Person) instance;
 
         Class<?> aClass = PersonTest.class.getClassLoader().loadClass("com.atguigu.constructor.Person");
         Method method = aClass.getDeclaredMethod("toString", null);
         method.setAccessible(true);
-        Object invoke = method.invoke(p, null);
+        //todo:静态方法对象可以传入null
+        Object invoke = method.invoke(instance, null);
         System.out.println("invoke = " + invoke);
 
+        //Field
         Class<?> aClass1 = PersonTest.class.getClassLoader().loadClass("com.atguigu.constructor.Person");
         Field name = aClass1.getDeclaredField("name");
         name.setAccessible(true);
-        name.set(p,"大乔");
-        System.out.println("name = " + p);
+        name.get(instance);
+        name.set(instance, "大乔");
+        System.out.println("name = " + instance);
 
+
+        Class<?> aClass2 = Class.forName("com.atguigu.constructor.PersonTest").
+                getClassLoader().loadClass("com.atguigu.constructor.Person").
+                getClassLoader().loadClass("com.atguigu.constructor.PersonTest").
+                getClassLoader().loadClass("com.atguigu.constructor.Person").
+                getClassLoader().loadClass("com.atguigu.constructor.PersonTest").
+                getClassLoader().loadClass("com.atguigu.constructor.Person");
+
+        System.out.println("aClass2 = " + aClass2);
     }
 }
 
