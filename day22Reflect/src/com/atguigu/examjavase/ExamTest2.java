@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Properties;
 
@@ -80,6 +81,25 @@ public class ExamTest2 {
 //        reader.read();
         String str = "hello";
         str.length();
+
+    }
+
+    @Test
+    public void test07(){
+        //HashMap修改key值hash值改变的问题
+        StringBuilder value = new StringBuilder("一念通天,神魔无惧!");
+        StringBuffer key = new StringBuffer("李信");
+        HashMap map = new HashMap();
+        map.put(key, value);
+        System.out.println("map = " + map);
+        System.out.println("map.hashCode() = " + map.hashCode());
+        System.out.println("map.get(key) = " + map.get(key));
+        System.out.println("===============================");
+        key = new StringBuffer("元歌");
+        System.out.println("map = " + map);
+        System.out.println("map.hashCode() = " + map.hashCode());
+        System.out.println("map.get(key) = " + map.get(key));
+
 
     }
 }
