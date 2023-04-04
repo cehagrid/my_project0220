@@ -1,13 +1,22 @@
 
 1. JDBC的理解
-
+sun公司提供的一套API(java.sql,javax.sql下)，使用这套API可以实现对数据库的管理操作。（获取连接、CRUD等）
 
 2. JDBC之于数据库操作的所处位置：
 
 
 3. 什么是JDBC中的面向接口编程？
 
+> JDBC是sun公司提供一套用于数据库操作的接口，java程序员只需要面向这套接口编程即可。
+
+> 不同的数据库厂商，需要针对这套接口，提供不同实现。不同的实现的集合，即为不同数据库的驱动。
 
 4. 本套JDBC课程主要的内容有哪些？
 
+> （熟悉）如何手动实现数据库的连接：com.atguigu01.selfconnect
+> （掌握）如何使用数据库连接池的方式获取连接：com.atguigu02.druid
+> （熟悉）如何使用SUN提供的基础API实现对数据表的CRUD操作：com.atguigu03.preparedstatement
+> （掌握）如何使用第三方的jar包实现对数据表的CRUD操作：com.atguigu03.dbutils
+> 大的案例：com.atguigu04.dao
+> 数据库事务：com.atguigu05.transaction
 

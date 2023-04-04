@@ -1,10 +1,18 @@
 
 1. 实现数据库的连接操作的两种方式（大方向）：
+> 手动实现
+> 使用数据库连接池
 
 
 2. 要想手动获取数据库的连接，需要的准备工作：
 
+> 在当前的module中添加mysql驱动：mysql-connector-java-8.0.26.jar ---> add as libary
+> 数据库是开启状态
+> 输入正确的：user、password、url
+> 确保要操作的数据库是存在的。（比如：test数据库）
 
-3. 复习：url
 
 
+3. 复习：url:统一资源定位符
+
+http://127.0.0.1:8080/gmall/product/index.html
